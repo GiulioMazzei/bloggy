@@ -1,5 +1,7 @@
 import { useState, useRef } from "react"
 
+import { Link } from "react-router-dom"
+
 import AuthService from '../services/auth.service'
 
 import RegisterForm from "../components/RegisterForm"
@@ -42,7 +44,6 @@ const Register = (props) => {
                 (error) => {
                     const resMessage = error.response?.data?.message || error.message || error.toString();
                     setMessage(resMessage);
-                    // setSuccessful(false);
                 }
             );
         }
@@ -75,6 +76,10 @@ const Register = (props) => {
                 checkBtn={checkBtn}
 
             />
+
+            <div>
+                <p>Already Have an Account ? <Link to='/login'>Sign In</Link></p>
+            </div>
 
         </div>
     )

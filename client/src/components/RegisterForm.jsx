@@ -8,6 +8,12 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
     return (
         <Form onSubmit={onSubmit} ref={form}>
 
+            {message && (
+                <div className='form-group'>
+                    <div role='alert'>{message}</div>
+                </div>
+            )}
+
             <div>
                 <div className='form-group'>
                     <label htmlFor='username'>Username</label>
@@ -49,12 +55,6 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
                     <button>SIGN UP</button>
                 </div>
             </div>
-
-            {message && (
-                <div className='form-group'>
-                    <div role='alert'>{message}</div>
-                </div>
-            )}
 
             <CheckButton style={{ display: 'none' }} ref={checkBtn} />
 

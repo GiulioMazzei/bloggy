@@ -1,11 +1,19 @@
-import { Link } from 'react-router-dom'
+import AuthService from '../services/auth.service'
+
+import BlogInitialRender from '../components/BlogInitialRender'
 
 const Home = () => {
+
+    const currentUser = AuthService.getCurrentUser()
+
+
+
+    if (!currentUser) return <BlogInitialRender />
+
     return (
         <div>
             <h1>BLOGGY</h1>
-            <button><Link to='/login'>LOGIN</Link></button>
-            <button><Link to='/register'>REGISTER</Link></button>
+            <p>Public Content</p>
         </div>
     )
 }

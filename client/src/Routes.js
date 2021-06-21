@@ -4,6 +4,8 @@ import Home from "./pages/Home"
 
 import Register from './pages/Register';
 
+import Login from './pages/Login';
+
 const Routes = () => {
     return (
         <Router>
@@ -11,6 +13,7 @@ const Routes = () => {
                 <Redirect exact from='/' to='/home' />
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/register' component={Register} />
+                <Route exact path='/login' component={Login} />
             </Switch>
       </Router>
     )
