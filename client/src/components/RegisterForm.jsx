@@ -9,8 +9,8 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
         <Form onSubmit={onSubmit} ref={form}>
 
             {message && (
-                <div className='form-group'>
-                    <div role='alert'>{message}</div>
+                <div className='message-container'>
+                    <div role='alert'><p>{message}</p></div>
                 </div>
             )}
 
@@ -24,6 +24,7 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
                         value={values[0]}
                         onChange={onChanges[0]}
                         validations={validations[0]}
+                        placeholder='Enter Your Username'
                     />
                 </div>
 
@@ -36,6 +37,7 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
                         value={values[1]}
                         onChange={onChanges[1]}
                         validations={validations[1]}
+                        placeholder='Enter Your Email'
                     />
                 </div>
 
@@ -48,6 +50,7 @@ const RegisterForm = ({ onSubmit, form, values, onChanges, validations, message,
                         value={values[2]}
                         onChange={onChanges[2]}
                         validations={validations[2]}
+                        placeholder='Enter Your Password'
                     />
                 </div>
 
