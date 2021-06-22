@@ -1,3 +1,4 @@
+/* eslint-disable import/no-anonymous-default-export */
 import { isEmail } from 'validator';
 
 const required = (value) => {
