@@ -17,8 +17,8 @@ const login = (username, email, password) => {
             .then((res) => {
 
                 if (res.data.accessToken) {
-                //se the user object (with JWT access-token) in the Local Storage
-                localStorage.setItem('user', JSON.stringify(res.data));
+                    //se the user object (with JWT access-token) in the Local Storage
+                    localStorage.setItem('user', JSON.stringify(res.data));
                 }
         
                 return res.data;
@@ -26,11 +26,7 @@ const login = (username, email, password) => {
 };
 
 
-//logout service
-const logout = () => {
-    //remove the user object from the Local Storage
-    localStorage.removeItem('user');
-};
+const getAllProfiles = () => axios.get(`${API_URL}/all`)
 
 
 //get-current-user service
@@ -41,6 +37,15 @@ const getCurrentUser = () => {
 
 
 
+//logout service
+const logout = () => {
+    //remove the user object from the Local Storage
+    localStorage.removeItem('user');
+};    
 
-export default { register, login, logout, getCurrentUser };
+
+
+
+
+export default { register, login, getAllProfiles, getCurrentUser, logout};
   

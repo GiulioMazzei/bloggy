@@ -4,6 +4,8 @@ import BlogInitialRender from '../components/BlogInitialRender'
 
 import PostsList from '../components/posts/PostsList'
 
+import Profiles from '../components/profiles/Profiles'
+
 const Home = () => {
 
     const currentUser = AuthService.getCurrentUser()
@@ -16,6 +18,8 @@ const Home = () => {
         <div>
             <h1>BLOGGY</h1>
             <p>Public Content</p>
+
+            <Profiles />
 
             <PostsList />
         </div>

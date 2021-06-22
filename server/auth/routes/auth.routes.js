@@ -18,4 +18,7 @@ module.exports = (app) => {
     //signin route
     app.post('/api/auth/signin', controller.signin);
 
+    //get-all-profiles route
+    app.get('/api/auth/all', controller.getAllProfiles)
+
 }

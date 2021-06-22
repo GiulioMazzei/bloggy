@@ -66,4 +66,17 @@ exports.signin = (req, res) => {
         res.status(500).send({ message: err });
     }
   };
-  
+
+
+//retrieve all the usernames
+exports.getAllProfiles = (req, res) => {
+
+    User.findAll({
+        where: {}, 
+    })
+        .then((data) => res.send(data.map((obj) => obj.username))) //take only the usernames
+        .catch((err) => {
+            res.status(500).send({ message: err.message || 'Some Error Occurred While Retriving Profiles.' });
+        });
+
+}
