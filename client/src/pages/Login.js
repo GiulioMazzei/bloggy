@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 import AuthService from '../services/auth.service'
 
-import LoginForm from '../components/LoginForm'
+import LoginForm from '../components/forms/LoginForm'
 
 import Helper from '../helper/index'
 

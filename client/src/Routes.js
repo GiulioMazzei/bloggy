@@ -6,6 +6,8 @@ import Register from './pages/Register';
 
 import Login from './pages/Login';
 
+import Post from './pages/Post';
+
 const Routes = () => {
     return (
         <Router>
@@ -14,6 +16,7 @@ const Routes = () => {
                 <Route exact path='/home' component={Home} />
                 <Route exact path='/register' component={Register} />
                 <Route exact path='/login' component={Login} />
+                <Route path='/post' component={Post} />
             </Switch>
       </Router>
     )
