@@ -27,6 +27,8 @@ app.get('/', (req, res) => res.send({ message: 'welcome to the Bloggy API' }));
 
 //auth routes
 require('./auth/routes/auth.routes')(app);
+//posts-api routes
+require('./posts-api/routes/post.routes')(app)
 
 
 
