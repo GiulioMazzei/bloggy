@@ -10,7 +10,7 @@ const SearchBox = ({ value, onChange, onClick }) => {
                 placeholder='Search For Posts'
             />
 
-            <button onClick={onClick}>SEARCH</button>
+            <button onClick={onClick}>Search Posts</button>
         </div>
     )
 }

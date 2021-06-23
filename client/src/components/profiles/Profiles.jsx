@@ -33,11 +33,8 @@ const Profiles = () => {
 
 
 
-    return (
-        <div>
-            <ProfilesList profiles={profiles} />
-        </div>
-    )
+    return <ProfilesList profiles={profiles} />
+
 }
 
 export default Profiles

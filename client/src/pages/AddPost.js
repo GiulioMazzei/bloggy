@@ -91,7 +91,7 @@ const AddPost = (props) => {
         <AddPostForm 
             post={post}
             onChange={(e) => setPost({ ...post, [e.target.name]: e.target.value })}
-            onClick={wantToUpdate ? updatePost : savePost}            
+            onClick={wantToUpdate ? updatePost : savePost}
         />
     )
 }

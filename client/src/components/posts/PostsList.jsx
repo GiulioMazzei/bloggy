@@ -7,6 +7,7 @@ import PostService from '../../services/post.service'
 import SearchBox from "./SearchBox"
 import Post from './Post'
 import PostsNotFound from "./PostsNotFound"
+import PostsDetails from "./PostsDetails"
 
 
 const PostsList = () => {
@@ -40,13 +41,20 @@ const PostsList = () => {
 
 
     return (
-        <div>
+        <div className='post-list-container'>
+
+            <h1 className='title'>Search for Titles</h1>
 
             <SearchBox
                 value={searchTitle}
                 onChange={(e) => setSearchTitle(e.target.value)}
                 onClick={findByTitle}
             />
+
+            <div className='separator'></div>
+
+            <PostsDetails posts={posts} />
+
 
             {
                 posts.length === 0

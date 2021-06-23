@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 
+import NavBar from './components/NavBar';
+
 
 import Home from "./pages/Home"
 
@@ -13,11 +15,15 @@ import Post from './pages/Post';
 
 import AddPost from './pages/AddPost';
 
+//style
+import './styles/global.scss'
+
 
 
 const Routes = () => {
     return (
         <Router>
+            <NavBar />
             <Switch>
                 <Redirect exact from='/' to='/home' />
                 <Route exact path='/home' component={Home} />
