@@ -1,20 +1,12 @@
-import { useState, useEffect } from 'react'
-
 import { Link } from 'react-router-dom'
 
 import AuthorPostsList from '../posts/AuthorPostsList'
 
-import avatars from '../../img/avatars/avatars'
+import avatar from '../../img/avatar.png'
 
 const ProfileInfo = ({ author, posts, onClick }) => {
 
-    const [avatar, setAvatar] = useState()
 
-
-    useEffect(() => {
-        //decide which avatar to give to a user
-        avatars.getAvatar(author, setAvatar, avatars)
-    }, [author, avatar])
 
 
     return (

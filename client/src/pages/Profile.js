@@ -29,7 +29,7 @@ const Profile = (props) => {
             .then((res) => setPosts(res.data))
             .catch((err) => console.log(err))
 
-    }, [author])
+    }, [author, props.location.search])
 
 
 

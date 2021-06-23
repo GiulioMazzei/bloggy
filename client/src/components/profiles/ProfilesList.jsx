@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
 
-import avatars from "../../img/avatars/avatars"
+import avatar from "../../img/avatar.png"
 
 const ProfilesList = ({ profiles }) => {
     return (
@@ -15,9 +15,9 @@ const ProfilesList = ({ profiles }) => {
                     :
                     profiles.map((profile, index) => {
                         return (
-                            <div className="profile-container">
-                                <img src={avatars.avatar1} alt="avatar" />
-                                <Link key={index} to={`/profile?author=${profile}`} className='link' >
+                            <div key={index} className="profile-container">
+                                <img src={avatar} alt="avatar" />
+                                <Link to={`/profile?author=${profile}`} className='link' >
                                     <p>{profile}</p>
                                 </Link>
                             </div>
