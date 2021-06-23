@@ -18,9 +18,11 @@ const Post = (props) => {
 
 
     useEffect(() => {
+        
         //get the title from the url
         const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
         findByTitle(postTitle)
+
     }, [props.location.search])
 
 

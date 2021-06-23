@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 
 import verifyAuth from '../services/verify-auth.service';
@@ -24,6 +24,13 @@ const AddPost = (props) => {
 
     const [post, setPost] = useState(initialPostState)
     const [submitted, setSubmitted] = useState(false)
+    const [wantToUpdate, setWantToUpdate] = useState(false)
+
+
+    useEffect(() => {
+        if (props.location.search.includes('title')) setWantToUpdate(true)
+        console.log('want to update: ', wantToUpdate);
+    }, [wantToUpdate, props.location.search])
 
 
     //save post functionality
@@ -42,7 +49,31 @@ const AddPost = (props) => {
             })
             .catch((err) => console.log(err))
 
+
     };
+
+
+    //update post functionality
+    const updatePost = () => {
+
+        const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
+
+        PostService.findByTitle(postTitle)
+            .then((res) => {
+
+                PostService.update(res.data[0].id, post.title, post.content)
+                    .then((res) => {
+                        //redirect the user to the post page
+                        props.history.push(`/post?title=${post.title}`);
+                        window.location.reload();
+                    })
+                    .catch((err) => console.log(err))
+
+            })
+            .catch((err) => console.log(err))
+
+
+    }
 
 
     //new post functionality
@@ -60,7 +91,7 @@ const AddPost = (props) => {
         <AddPostForm 
             post={post}
             onChange={(e) => setPost({ ...post, [e.target.name]: e.target.value })}
-            onClick={savePost}            
+            onClick={wantToUpdate ? updatePost : savePost}            
         />
     )
 }

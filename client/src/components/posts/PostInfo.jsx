@@ -1,4 +1,4 @@
-import React from 'react'
+import { Link } from 'react-router-dom'
 
 const PostInfo = ({ post, isAuthor, onClick }) => {
     return (
@@ -6,6 +6,7 @@ const PostInfo = ({ post, isAuthor, onClick }) => {
             <h1>{post.title}</h1>
             <h3>Author: {post.author}</h3>
             <p>{post.content}</p>
+            {isAuthor && <button><Link to={`/add/update?title=${post.title}`}>UPDATE POST</Link></button>}
             {isAuthor && <button onClick={onClick} >DELETE POST</button>}
         </div>
     )

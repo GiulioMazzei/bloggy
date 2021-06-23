@@ -12,26 +12,31 @@ import ProfileInfo from '../components/profiles/ProfileInfo';
 const Profile = (props) => {
 
     const [posts, setPosts] = useState([])
+    const [author, setAuthor] = useState('')
 
     //redirect the user to the home page if it isn't logged in
     verifyAuth(props, '/home')
 
-    //if it's logged in get the current user info from localStorage
-    const currentUser = AuthService.getCurrentUser()
 
 
     useEffect(() => {
-        PostService.findByAuthor(currentUser.username)
+
+        //take the author name from the url
+        setAuthor((props.location.search).slice(8).replace(/%20/g, ' '))
+
+
+        PostService.findByAuthor(author)
             .then((res) => setPosts(res.data))
             .catch((err) => console.log(err))
-    }, [])
+
+    }, [author])
 
 
 
 
     return (
         <ProfileInfo 
-            currentUser={currentUser}
+            author={author}
             posts={posts}
             onClick={AuthService.logout}
         />

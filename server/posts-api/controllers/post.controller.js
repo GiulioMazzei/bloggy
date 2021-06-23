@@ -68,7 +68,7 @@ exports.findAllByAuthor = (req, res) => {
     const author = req.query.author;
   
     Post.findAll({
-        where: { author: { [Op.like]: `%${author}%` } }, 
+        where: { author }, 
         order: [['createdAt', 'DESC']] //order the post from the newest to the oldest
     })
         .then((data) => res.send(data))
