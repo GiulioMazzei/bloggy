@@ -17,7 +17,7 @@ const login = (username, email, password) => {
             .then((res) => {
 
                 if (res.data.accessToken) {
-                    //se the user object (with JWT access-token) in the Local Storage
+                    //set the user object (with JWT access-token) in the Local Storage
                     localStorage.setItem('user', JSON.stringify(res.data));
                 }
         

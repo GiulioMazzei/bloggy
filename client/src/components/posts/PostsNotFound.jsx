@@ -1,7 +1,7 @@
 const PostsNotFound = () => {
     return (
-        <div>
-            <h2>No Posts Found</h2>
+        <div className='not-found-container'>
+            <p>No Posts Found</p>
         </div>
     )
 }

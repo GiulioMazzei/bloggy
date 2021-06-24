@@ -23,7 +23,7 @@ const create = (author, title, content, category) => axios.post(API_URL, { autho
 const remove = (id) => axios.delete(`${API_URL}/${id}`);
 
 //update the post from its ID
-const update = (id, title, content) => axios.put(`${API_URL}/${id}`, { title, content });
+const update = (id, title, content, category) => axios.put(`${API_URL}/${id}`, { title, content, category });
 
 
 

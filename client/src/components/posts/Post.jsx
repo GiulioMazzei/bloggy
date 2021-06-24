@@ -1,13 +1,49 @@
 import { Link } from "react-router-dom"
 
+import avatar from '../../img/avatar.png'
+import postCoverImg from '../../img/post-cover.webp'
+
 
 const Post = ({ post }) => {
+
+    let formattedDate = new Date(post.createdAt)
+    const publishedData = formattedDate.toString().slice(4, 15)
+
+
+
     return (
-        <div>
-            <h3>
-                <Link to={`/post?title=${post.title}`}>{post.title}</Link>
-            </h3>
-            <p>{post.content}</p>
+        <div className='post-container'>
+
+            <div className="img-box">
+                <img src={postCoverImg} alt="" />
+            </div>
+
+            <div className='content-box'>
+
+                <div className="author-box">
+                    <Link className='link' to={`/profile?author=${post.author}`}>
+                        <div className='box-1'>
+                            <img src={avatar} alt="author" />
+                            <p>{post.author}</p>
+                        </div>
+                    </Link>
+                    <div className='box-2'>
+                        <p>Published {publishedData}</p>
+                    </div>
+                </div>
+
+                <Link className='link' to={`/post?title=${post.title}`}>
+                    <h3 className='post-title'>
+                        <p>{post.title}</p>
+                    </h3>
+
+                    <div className='content'>
+                        <p>{post.content}</p>
+                    </div>
+                </Link>
+
+            </div>
+
         </div>
     )
 }

@@ -18,7 +18,7 @@ const Post = (props) => {
 
 
     useEffect(() => {
-        
+
         //get the title from the url
         const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
         findByTitle(postTitle)
@@ -47,12 +47,12 @@ const Post = (props) => {
         <div>
             <h1>POST INFO PAGE</h1>
 
-            <PostInfo 
-                post={post} 
-                isAuthor={isAuthor} 
-                onClick={deletePost} 
+            <PostInfo
+                post={post}
+                isAuthor={isAuthor}
+                onClick={deletePost}
             />
-            
+
         </div>
 
     )
