@@ -13,8 +13,11 @@ const findByTitle = (title) => axios.get(`${API_URL}/t/?title=${title}`);
 //find the post from its author
 const findByAuthor = (author) => axios.get(`${API_URL}/a/?author=${author}`)
 
+//find the post from its category
+const findByCategory = (category) => axios.get(`${API_URL}/c/?category=${category}`)
+
 //create the post
-const create = (author, title, content) => axios.post(API_URL, { author, title, content});
+const create = (author, title, content, category) => axios.post(API_URL, { author, title, content, category});
 
 //remove the post from its ID
 const remove = (id) => axios.delete(`${API_URL}/${id}`);
@@ -24,4 +27,4 @@ const update = (id, title, content) => axios.put(`${API_URL}/${id}`, { title, co
 
 
 
-export default { getAll, findByTitle, findByAuthor, create, remove, update }
+export default { getAll, findByTitle, findByAuthor, findByCategory, create, remove, update }

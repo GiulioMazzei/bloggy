@@ -20,6 +20,7 @@ const AddPost = (props) => {
         author: JSON.parse(localStorage.getItem('user')).username,
         title: '',
         content: '',
+        category: '',
     };
 
     const [post, setPost] = useState(initialPostState)
@@ -36,13 +37,14 @@ const AddPost = (props) => {
     //save post functionality
     const savePost = () => {
 
-        PostService.create(post.author, post.title, post.content)
+        PostService.create(post.author, post.title, post.content, post.category)
             .then(response => {
                 setPost({
                     id: response.data.id,
                     author: response.data.author,
                     title: response.data.title,
                     content: response.data.content,
+                    category: response.data.category,
                 });
                 setSubmitted(true);
                 console.log(response.data);
@@ -61,7 +63,7 @@ const AddPost = (props) => {
         PostService.findByTitle(postTitle)
             .then((res) => {
 
-                PostService.update(res.data[0].id, post.title, post.content)
+                PostService.update(res.data[0].id, post.title, post.content, post.category)
                     .then((res) => {
                         //redirect the user to the post page
                         props.history.push(`/post?title=${post.title}`);

@@ -16,6 +16,9 @@ module.exports = (app) => {
     //retrieve all the posts from a specific author
     router.get('/a/', posts.findAllByAuthor)
 
+    //retrieve all the posts from a specific category
+    router.get('/c/', posts.findAllByCategory)
+
     //update a post from its ID
     router.put('/:id', posts.update);
 

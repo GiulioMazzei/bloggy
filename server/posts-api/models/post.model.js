@@ -12,6 +12,9 @@ module.exports = (sequelize, Sequelize) => {
       content: {
         type: Sequelize.STRING,
       },
+      category: {
+        type: Sequelize.STRING,
+      },
     });
   
     return Post;

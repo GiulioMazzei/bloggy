@@ -6,6 +6,8 @@ import PostsList from '../components/posts/PostsList'
 
 import Profiles from '../components/profiles/Profiles'
 
+import Categories from '../components/Categories'
+
 //style
 import '../styles/home.scss'
 
@@ -19,6 +21,7 @@ const Home = () => {
     return (
         <div className='home-container'>
             <div className='side-menu-container'>
+                <Categories />
                 <Profiles />
             </div>
 

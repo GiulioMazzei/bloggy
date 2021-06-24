@@ -19,6 +19,7 @@ exports.create = (req, res) => {
       author: req.body.author,
       title: req.body.title,
       content: req.body.content,
+      category: req.body.category,
     };
   
     //save the post in the DB
@@ -69,6 +70,23 @@ exports.findAllByAuthor = (req, res) => {
   
     Post.findAll({
         where: { author }, 
+        order: [['createdAt', 'DESC']] //order the post from the newest to the oldest
+    })
+        .then((data) => res.send(data))
+        .catch((err) => {
+            res.status(500).send({ message: err.message || 'Some Error Occurred While Retrieving Posts.' });
+        });
+
+}
+
+//retrieve all the posts published from a specific category
+exports.findAllByCategory = (req, res) => {
+
+    const category = req.query.category;
+    let condition = category ? { category } : {}
+  
+    Post.findAll({
+        where: condition,
         order: [['createdAt', 'DESC']] //order the post from the newest to the oldest
     })
         .then((data) => res.send(data))

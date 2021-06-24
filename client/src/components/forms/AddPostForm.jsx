@@ -27,6 +27,18 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                     />
                 </div>
 
+                <div className="form-group">
+                    <label htmlFor="category">Category</label>
+                    <input
+                        type="text"
+                        id="category"
+                        required
+                        value={post.category}
+                        onChange={onChange}
+                        name="category"
+                    />
+                </div>
+
                 <button onClick={onClick} className="btn btn-success">SUBMIT</button>
 
             </div>

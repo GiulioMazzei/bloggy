@@ -1,5 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useContext } from "react"
 
+import { GlobalContext } from "../../context/GlobalContext"
 
 import PostService from '../../services/post.service'
 
@@ -13,7 +14,8 @@ import PostsDetails from "./PostsDetails"
 const PostsList = () => {
 
 
-    const [posts, setPosts] = useState([])
+    const { posts_list } = useContext(GlobalContext)
+    const [posts, setPosts] = posts_list
     const [searchTitle, setSearchTitle] = useState('');
 
 
@@ -26,7 +28,10 @@ const PostsList = () => {
     //retrieve all the posts
     const retrievePosts = () => {
         PostService.getAll()
-            .then((res) => setPosts(res.data))
+            .then((res) => {
+                setPosts(res.data)
+                console.log(res.data);
+            })
             .catch((err) => console.log(err))
     }
 
