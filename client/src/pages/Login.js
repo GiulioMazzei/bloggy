@@ -9,7 +9,8 @@ import LoginForm from '../components/forms/LoginForm'
 import Helper from '../helper/index'
 
 
-
+//style
+import '../styles/login-register-page.scss'
 
 
 const Login = (props) => {
@@ -57,9 +58,9 @@ const Login = (props) => {
 
 
     return (
-        <div>
+        <div className='login-container'>
             
-            <h1>LOGIN</h1>
+            <h1 className='title'>Login</h1>
 
             <LoginForm
 
@@ -85,8 +86,8 @@ const Login = (props) => {
 
             />
 
-            <div>
-                <p>Don't Have an Account ? <Link to='/register'>Sign Up</Link></p>
+            <div className='helper'>
+                <p>Don't Have an Account ? <Link className='link-login' to='/register'>Sign Up</Link></p>
             </div>
 
         </div>

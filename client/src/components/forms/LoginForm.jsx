@@ -5,16 +5,18 @@ import CheckButton from 'react-validation/build/button';
 
 const LoginForm = ({ onSubmit, form, values, onChanges, validations, loading, message, checkBtn }) => {
     return (
-        <Form onSubmit={onSubmit} ref={form}>
+        <Form onSubmit={onSubmit} ref={form} className='form' >
 
             {message && (
-                <div className='message-container'>
+                <div className='message-container-login'>
                     <div role='alert'><p>{message}</p></div>
                 </div>
             )}
 
             <div className='form-group'>
-                <label className='label' htmlFor='username'>Username</label>
+                <div className="label-box">
+                    <label className='label' htmlFor='username'>Username</label>
+                </div>
                 <Input
                     type='text'
                     className='form-control'
@@ -27,7 +29,9 @@ const LoginForm = ({ onSubmit, form, values, onChanges, validations, loading, me
             </div>
 
             <div className='form-group'>
-                <label className='label' htmlFor='password'>Email</label>
+                <div className="label-box">
+                    <label className='label' htmlFor='password'>Email</label>
+                </div>
                 <Input
                     type='email'
                     className='form-control'
@@ -40,7 +44,9 @@ const LoginForm = ({ onSubmit, form, values, onChanges, validations, loading, me
             </div>
 
             <div className='form-group'>
-                <label className='label' htmlFor='password'>Password</label>
+                <div className="label-box">
+                    <label className='label' htmlFor='password'>Password</label>
+                </div>
                 <Input
                     type='password'
                     className='form-control'
@@ -52,8 +58,8 @@ const LoginForm = ({ onSubmit, form, values, onChanges, validations, loading, me
                 />
             </div>
 
-            <div className='button-container'>
-                <button disabled={loading}>LOGIN</button>
+            <div className='button-box-login'>
+                <button disabled={loading}>Login</button>
             </div>
 
             <CheckButton style={{ display: 'none' }} ref={checkBtn} />

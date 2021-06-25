@@ -1,0 +1,125 @@
+.register-container, 
+.login-container {
+    margin-top: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .title {
+        margin-bottom: 50px;
+        color: #65666F;
+    }
+
+    .form {
+        width: 45%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .message-container-register,
+        .message-container-login {
+            height: 60px;
+            width: 100%;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+        }
+
+        .message-container-register {
+            color: #69C7AF;
+            border: 1px solid #69C7AF;
+            background-color: #f2fbf9;
+        }
+
+        .message-container-login {
+            color: #88b4e7;
+            border: 1px solid #88b4e7;
+            background-color: #f2f7fb;
+        }
+
+
+
+        .form-group {
+            width: 100%;
+
+            .label-box {
+                color: #65666F;
+                margin: 15px 0px;
+            }
+
+            input {
+                width: 100%;
+                margin-bottom: 5px;
+                padding: 16px 25px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                background-color: #fff;
+                outline: none;
+            }
+
+        }
+
+        .button-box-register,
+        .button-box-login {
+            width: 100%;
+            margin-top: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button {
+                width: 40%;
+                padding: 15px 20px;
+                font-size: 17px;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                outline: none;
+            }
+        }
+
+        .button-box-register button {
+            background-color: #69C7AF;
+            &:hover {
+                background-color: #4eafa2;
+            }
+        }
+
+        .button-box-login button {
+            background-color: #88b4e7;
+            &:hover {
+                background-color: #71a8e7;
+            }
+        }
+
+        @media screen and (max-width: 850px) {
+            width: 80%;
+        }
+    }
+
+    .helper {
+        margin-top: 30px;
+
+        .link-register {
+            color: #69C7AF;
+            &:hover {
+                color: #4eafa2;
+            }
+        
+        .link-login {
+            color: #88b4e7;
+            &:hover {
+                color: #71a8e7;
+            }
+        }
+    }
+
+    @media screen and (max-width: 750px) {
+        margin-top: 100px;
+    }
+}
+}

@@ -8,6 +8,8 @@ import RegisterForm from '../components/forms/RegisterForm'
 
 import Helper from '../helper/index'
 
+//style
+import '../styles/login-register-page.scss'
 
 
 const Register = (props) => {
@@ -52,7 +54,7 @@ const Register = (props) => {
     return (
         <div className='register-container'>
             
-            <h1>REGISTER</h1>
+            <h1 className='title'>Register</h1>
 
             <RegisterForm 
 
@@ -77,8 +79,8 @@ const Register = (props) => {
 
             />
 
-            <div>
-                <p>Already Have an Account ? <Link to='/login'>Sign In</Link></p>
+            <div className='helper'>
+                <p>Already Have an Account ? <Link className='link-register' to='/login'>Sign In</Link></p>
             </div>
 
         </div>
