@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react"
 
+import NavBar from "../components/NavBar"
+
 import AuthService from "../services/auth.service"
 import verifyAuth from "../services/verify-auth.service"
 import PostService from "../services/post.service"
@@ -45,14 +47,12 @@ const Post = (props) => {
     return (
 
         <div>
-            <h1>POST INFO PAGE</h1>
-
+            <NavBar />
             <PostInfo
                 post={post}
                 isAuthor={isAuthor}
                 onClick={deletePost}
             />
-
         </div>
 
     )

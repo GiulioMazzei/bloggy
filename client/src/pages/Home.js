@@ -2,6 +2,8 @@ import AuthService from '../services/auth.service'
 
 import BlogInitialRender from '../components/BlogInitialRender'
 
+import NavBar from '../components/NavBar'
+
 import PostsList from '../components/posts/PostsList'
 
 import Profiles from '../components/profiles/Profiles'
@@ -19,14 +21,17 @@ const Home = () => {
     if (!currentUser) return <BlogInitialRender />
 
     return (
-        <div className='home-container'>
-            <div className='side-menu-container'>
-                <Categories />
-                <Profiles />
-            </div>
+        <div>
+            <NavBar />
+            <div className='home-container'>
+                <div className='side-menu-container'>
+                    <Categories />
+                    <Profiles />
+                </div>
 
-            <div className='posts-container'>
-                <PostsList />
+                <div className='posts-container'>
+                    <PostsList />
+                </div>
             </div>
         </div>
     )

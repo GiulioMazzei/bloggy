@@ -1,5 +1,6 @@
 import {useState, useEffect} from 'react';
 
+import NavBar from '../components/NavBar';
 
 import verifyAuth from '../services/verify-auth.service';
 import AuthService from '../services/auth.service';
@@ -35,11 +36,14 @@ const Profile = (props) => {
 
 
     return (
-        <ProfileInfo 
-            author={author}
-            posts={posts}
-            onClick={AuthService.logout}
-        />
+        <div>
+            <NavBar />
+            <ProfileInfo 
+                author={author}
+                posts={posts}
+                onClick={AuthService.logout}
+            />
+        </div>
     )
 }
 

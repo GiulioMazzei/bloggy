@@ -1,6 +1,6 @@
 const PostSubmitSuccess = ({ onClick }) => {
     return (
-        <div>
+        <div className='post-submit-success'>
 
             <h3>You Post has been successfully published</h3>
 

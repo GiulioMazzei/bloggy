@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 
+import NavBar from '../components/NavBar';
 
 import verifyAuth from '../services/verify-auth.service';
 import PostService from '../services/post.service'
@@ -87,14 +88,22 @@ const AddPost = (props) => {
 
 
     //if the post has been submitted
-    if (submitted) return <PostSubmitSuccess onClick={newPost} /> 
+    if (submitted) return (
+        <div>
+            <NavBar />
+            <PostSubmitSuccess onClick={newPost} />
+        </div>
+    ) 
 
     return (
-        <AddPostForm 
-            post={post}
-            onChange={(e) => setPost({ ...post, [e.target.name]: e.target.value })}
-            onClick={wantToUpdate ? updatePost : savePost}
-        />
+        <div>
+            <NavBar />
+            <AddPostForm 
+                post={post}
+                onChange={(e) => setPost({ ...post, [e.target.name]: e.target.value })}
+                onClick={wantToUpdate ? updatePost : savePost}
+            />
+        </div>
     )
 }
 
