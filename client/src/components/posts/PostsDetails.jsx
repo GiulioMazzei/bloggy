@@ -4,7 +4,7 @@ const PostsDetails = ({ posts }) => {
     return (
         <div className='posts-details-container'>
             <p className='posts-num'>{posts.length} posts</p>
-            <p className='target'>Newest</p>
+            <p className='active'>Newest</p>
         </div>
     )
 }

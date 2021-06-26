@@ -9,6 +9,7 @@ import SearchBox from "./SearchBox"
 import Post from './Post'
 import PostsNotFound from "./PostsNotFound"
 import PostsDetails from "./PostsDetails"
+import Categories from '../Categories'
 
 
 const PostsList = () => {
@@ -58,8 +59,10 @@ const PostsList = () => {
 
             <div className='separator'></div>
 
-            <PostsDetails posts={posts} />
-
+            <div className="posts-controllers">
+                <PostsDetails posts={posts} />
+                <Categories />
+            </div>
 
             {
                 posts.length === 0

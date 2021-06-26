@@ -7,7 +7,7 @@ const ProfilesList = ({ profiles }) => {
 
     return (
         <div className='profiles-container'>
-            <div className='box-name'>
+            <div className='title'>
                 <p>Other Authors</p>
             </div>
 
@@ -19,10 +19,13 @@ const ProfilesList = ({ profiles }) => {
                         //show only 5 profiles
                         return (
                             <div key={index} className="profile-container">
+
                                 <img src={avatar} alt="avatar" />
-                                <Link to={`/profile?author=${profile}`} className='link' >
+
+                                <Link className='link' to={`/profile?author=${profile}`}>
                                     <p>{profile}</p>
                                 </Link>
+
                             </div>
                         )
                     })

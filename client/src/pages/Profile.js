@@ -17,6 +17,7 @@ const Profile = (props) => {
 
     const [posts, setPosts] = useState([])
     const [author, setAuthor] = useState('')
+    const [isAuthor, setIsAuthor] = useState(false)
 
     //redirect the user to the home page if it isn't logged in
     verifyAuth(props, '/home')
@@ -33,6 +34,9 @@ const Profile = (props) => {
             .then((res) => setPosts(res.data))
             .catch((err) => console.log(err))
 
+
+        if (author === AuthService.getCurrentUser().username) setIsAuthor(true)
+
     }, [author, props.location.search])
 
 
@@ -43,6 +47,7 @@ const Profile = (props) => {
             <NavBar />
             <ProfileInfo 
                 author={author}
+                isAuthor={isAuthor}
                 posts={posts}
                 onClick={AuthService.logout}
             />

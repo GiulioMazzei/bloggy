@@ -4,7 +4,7 @@ import AuthorPostsList from '../posts/AuthorPostsList'
 
 import avatar from '../../img/avatar.png'
 
-const ProfileInfo = ({ author, posts, onClick }) => {
+const ProfileInfo = ({ author, isAuthor, posts, onClick }) => {
 
 
     return (
@@ -17,7 +17,7 @@ const ProfileInfo = ({ author, posts, onClick }) => {
 
                 <div className="title-and-button">
                     <h1 className='title'>{author}</h1>
-                    <button onClick={onClick}><Link className='link' to='/home'>Logout</Link></button >
+                    {isAuthor && <button onClick={onClick}><Link className='link' to='/home'>Logout</Link></button >}
                 </div>
             </div>
 

@@ -8,10 +8,8 @@ import PostsList from '../components/posts/PostsList'
 
 import Profiles from '../components/profiles/Profiles'
 
-import Categories from '../components/Categories'
-
 //style
-import '../styles/home.scss'
+import '../styles/home-page.scss'
 
 const Home = () => {
 
@@ -28,7 +26,6 @@ const Home = () => {
                     <PostsList />
                 </div>
                 <div className='side-menu-container'>
-                    <Categories />
                     <Profiles />
                 </div>
 

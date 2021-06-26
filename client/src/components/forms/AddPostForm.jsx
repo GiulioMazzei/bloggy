@@ -31,6 +31,7 @@ const AddPostForm = ({ post, onChange, onClick, wantToUpdate }) => {
             <div className="form-group">
                 <div className="label-box"><label htmlFor="category">Category</label></div>
                 <select onChange={onChange[1]}>
+                    <option name="All" value="All">-</option>
                     <option name="Fashion" value="Fashion">Fashion</option>
                     <option name="Food" value="Food">Food</option>
                     <option name="House" value="House">House</option>
