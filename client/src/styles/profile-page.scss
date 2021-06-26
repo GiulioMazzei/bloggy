@@ -1,0 +1,84 @@
+.profile-page-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .img-title-box {
+        margin-top: 50px;
+        display: flex;
+        align-items: center;
+
+        .img-box {
+            margin-right: 30px;
+
+            img {
+                width: 150px;
+            }
+
+        }
+
+        .title-and-button {
+            .link {
+                text-decoration: none;
+                color: #fff;
+            }
+
+            .title {
+                font-size: 40px;
+                color: #6C6C74;
+            }
+
+            button {
+                margin-top: 20px;
+                padding: 8px 20px;
+                font-size: 17px;
+                color: #fff;
+                border: none;
+                border-radius: 3px;
+                cursor: pointer;
+                outline: none;
+                background-color: #88b4e7;
+                &:hover {
+                    background-color: #71a8e7;
+                }
+            }
+        }
+        
+
+    }
+
+    .published-posts {
+        margin-top: 80px;
+        width: 30%;
+
+        .link {
+            text-decoration: none;
+            color: #6C6C74;
+        }
+
+        .title {
+            font-size: 20px;
+            color: #606061;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            margin-bottom: 10px;
+        }
+
+        .author-post-box {
+
+            .no-post {
+                padding: 15px 0px;
+                border-top: 1px solid #ccc;
+                border-bottom: 1px solid #ccc;
+            }
+            .author-post {
+                padding: 15px 0px;
+                border-bottom: 1px solid #ccc;
+            }
+        }
+    }
+
+
+}

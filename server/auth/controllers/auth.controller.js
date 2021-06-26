@@ -59,6 +59,7 @@ exports.signin = (req, res) => {
                 username: user.username,
                 email: user.email,
                 accessToken: token,
+                createdAt: user.createdAt,
             });
 
         });

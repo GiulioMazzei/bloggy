@@ -12,8 +12,8 @@
         justify-content: center;
 
         img {
-            width: 110px;
-            margin-right: 10px;
+            width: 30px;
+            margin-right: 25px;
         }
 
         p {
@@ -32,7 +32,7 @@
         justify-content: space-around;
 
         .link {
-            font-size: 18px;
+            font-size: 16px;
             color: #7A7981;
             opacity: 0.75;
             text-decoration: none;
@@ -42,7 +42,7 @@
 
             &:hover {
                 opacity: 1;
-                color: #69C7AF;
+                color: #6697D2;
             }
 
             &::before {
@@ -50,12 +50,12 @@
                 height: 2px;
                 content: "";
                 position: absolute;
-                background-color: #69C7AF;
+                background-color: #6697D2;
             }
 
             &::before {
                 width: 0%;
-                bottom: -10px;
+                bottom: -4px;
             }
               
             &:hover::before {

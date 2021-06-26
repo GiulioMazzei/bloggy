@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 import AuthService from "../services/auth.service"
 
-import logo from '../img/logo.jpg'
+import logo from '../img/logo.png'
 
 //style
 import '../styles/navbar.scss'

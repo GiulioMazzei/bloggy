@@ -8,6 +8,9 @@ import PostService from '../services/post.service'
 
 import ProfileInfo from '../components/profiles/ProfileInfo';
 
+//style
+import '../styles/profile-page.scss'
+
 
 
 const Profile = (props) => {

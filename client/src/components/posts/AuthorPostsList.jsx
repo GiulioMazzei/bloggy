@@ -3,16 +3,11 @@ import AuthorPost from "./AuthorPost"
 
 const AuthorPostsList = ({ posts }) => {
     return (
-        <div>
-
-            <h1>Author's Posts</h1>
-            <div>
-                {posts.length === 0
-                    ? <p>This Author Has No Posts</p>
-                    : posts.map((post, index) => <AuthorPost key={index} post={post} />)
-                }
-            </div>
-
+        <div className='author-post-box'>
+            {posts.length === 0
+                ? <div className="no-post"><p></p></div>
+                : posts.slice(0, 5).map((post, index) => <AuthorPost key={index} post={post} />)
+            }
         </div>
     )
 }

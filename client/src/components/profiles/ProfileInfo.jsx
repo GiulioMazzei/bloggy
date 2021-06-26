@@ -7,19 +7,29 @@ import avatar from '../../img/avatar.png'
 const ProfileInfo = ({ author, posts, onClick }) => {
 
 
-
-
     return (
-        <div>
+        <div className='profile-page-container'>
 
-            <img src={avatar} alt="avt-1" width='100' />
+            <div className="img-title-box">
+                <div className="img-box">
+                    <img src={avatar} alt="avt-1" width='100' />
+                </div>
 
-            <p><strong>Author: </strong>{author}</p>
+                <div className="title-and-button">
+                    <h1 className='title'>{author}</h1>
+                    <button onClick={onClick}><Link className='link' to='/home'>Logout</Link></button >
+                </div>
+            </div>
 
-            <p>This author has published {posts.length} posts</p>
-            <AuthorPostsList posts={posts} />
+            <div className="published-posts">
+                <p className='title'>User's Posts</p>
+                <p className='description'>This author has published {posts.length} posts</p>
+                <AuthorPostsList posts={posts} />
+            </div>
 
-            <button onClick={onClick}><Link to='/home'>LOGOUT</Link></button >
+            <div className="button-box">
+
+            </div>
 
         </div >
     )

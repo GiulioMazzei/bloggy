@@ -24,14 +24,14 @@ const Home = () => {
         <div>
             <NavBar />
             <div className='home-container'>
+                <div className='posts-container'>
+                    <PostsList />
+                </div>
                 <div className='side-menu-container'>
                     <Categories />
                     <Profiles />
                 </div>
 
-                <div className='posts-container'>
-                    <PostsList />
-                </div>
             </div>
         </div>
     )
