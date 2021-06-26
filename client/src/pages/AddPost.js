@@ -9,6 +9,9 @@ import AddPostForm from '../components/forms/AddPostForm';
 import PostSubmitSuccess from '../components/posts/PostSubmitSuccess';
 
 
+//style
+import '../styles/addpost-page.scss'
+
 
 const AddPost = (props) => {
 
@@ -100,8 +103,12 @@ const AddPost = (props) => {
             <NavBar />
             <AddPostForm 
                 post={post}
-                onChange={(e) => setPost({ ...post, [e.target.name]: e.target.value })}
+                onChange={[
+                    (e) => setPost({ ...post, [e.target.name]: e.target.value }),
+                    (e) => setPost({ ...post, category: e.target.value })
+                ]}
                 onClick={wantToUpdate ? updatePost : savePost}
+                wantToUpdate={wantToUpdate}
             />
         </div>
     )

@@ -8,6 +8,9 @@ import PostService from "../services/post.service"
 
 import PostInfo from "../components/posts/PostInfo"
 
+//style
+import '../styles/post-page.scss'
+
 
 
 const Post = (props) => {

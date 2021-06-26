@@ -13,6 +13,10 @@
 
             img {
                 width: 150px;
+
+                @media screen and (max-width: 1000px) {
+                    width: 120px;
+                }
             }
 
         }
@@ -26,6 +30,10 @@
             .title {
                 font-size: 40px;
                 color: #6C6C74;
+
+                @media screen and (max-width: 1000px) {
+                    font-size: 35px;
+                }
             }
 
             button {
@@ -49,7 +57,7 @@
 
     .published-posts {
         margin-top: 80px;
-        width: 30%;
+        width: 50%;
 
         .link {
             text-decoration: none;
@@ -63,7 +71,7 @@
         }
 
         .description {
-            margin-bottom: 10px;
+            margin-bottom: 25px;
         }
 
         .author-post-box {
@@ -78,7 +86,13 @@
                 border-bottom: 1px solid #ccc;
             }
         }
+
+        @media screen and (max-width: 1600px) {
+            width: 60%;
+        }
+
+        @media screen and (max-width: 400px) {
+            width: 80%;
+        }
     }
-
-
 }
