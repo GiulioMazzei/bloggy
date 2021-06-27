@@ -95,12 +95,13 @@ const AddPost = (props) => {
 
 
 
-
     //new post functionality
     const newPost = () => {
-        setCurrentPost(initialPostState);
+        setPost(initialPostState);
         setSubmitted(false);
     };
+
+
 
 
 

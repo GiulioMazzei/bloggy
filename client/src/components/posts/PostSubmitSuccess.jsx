@@ -2,7 +2,9 @@ const PostSubmitSuccess = ({ onClick }) => {
     return (
         <div className='post-submit-success'>
 
-            <h3>You Post has been successfully published</h3>
+            <div className="message-box">
+                <p>You Post has been successfully published</p>
+            </div>
 
             <button onClick={onClick}>ADD NEW</button>
 
