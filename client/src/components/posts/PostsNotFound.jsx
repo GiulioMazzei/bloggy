@@ -1,6 +1,6 @@
 const PostsNotFound = () => {
     return (
-        <div className='not-found-container'>
+        <div className='posts-not-found'>
             <p>No Posts Found</p>
         </div>
     )

@@ -56,10 +56,21 @@
             border-radius: 3px;
             cursor: pointer;
             outline: none;
+        }
+
+        .btn-add {
             background-color: #88b4e7;
 
             &:hover {
                 background-color: #71a8e7;
+            }
+        }
+
+        .btn-update {
+            background-color: #69C7AF;
+            
+            &:hover {
+                background-color: #4eafa2;
             }
         }
 

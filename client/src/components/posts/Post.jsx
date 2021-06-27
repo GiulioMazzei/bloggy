@@ -32,15 +32,15 @@ const Post = ({ post }) => {
                     </div>
                 </div>
 
-                <Link className='link' to={`/post?title=${post.title}`}>
-                    <h3 className='post-title'>
-                        <p>{post.title}</p>
-                    </h3>
+                <div className="title-description-box">
+                    <Link className='link' to={`/post?title=${post.title}`}>
+                        <p className='post-title'>{post.title}</p>
 
-                    <div className='content'>
-                        <p>{post.content}</p>
-                    </div>
-                </Link>
+                        <div className='content'>
+                            <p>{post.content}</p>
+                        </div>
+                    </Link>
+                </div>
 
             </div>
 

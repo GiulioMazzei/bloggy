@@ -6,6 +6,7 @@ import verifyAuth from '../services/verify-auth.service';
 import PostService from '../services/post.service'
 
 import AddPostForm from '../components/forms/AddPostForm';
+import UpdatePostForm from '../components/forms/UpdatePostForm'
 import PostSubmitSuccess from '../components/posts/PostSubmitSuccess';
 
 
@@ -28,14 +29,32 @@ const AddPost = (props) => {
     };
 
     const [post, setPost] = useState(initialPostState)
+    const [currentPost, setCurrentPost] = useState(initialPostState)
+
     const [submitted, setSubmitted] = useState(false)
     const [wantToUpdate, setWantToUpdate] = useState(false)
-
-
+    
+    
     useEffect(() => {
         if (props.location.search.includes('title')) setWantToUpdate(true)
-        console.log('want to update: ', wantToUpdate);
+        
+        const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
+        findByTitle(postTitle);
+        
     }, [wantToUpdate, props.location.search])
+
+
+
+    //find-by-title functionality
+    const findByTitle = (title) => {
+        PostService.findByTitle(title)
+            .then((res) => {
+                setCurrentPost(res.data[0])
+                console.log(res.data[0]);
+            })
+            .catch((err) => console.log(err))
+    }
+
 
 
     //save post functionality
@@ -59,32 +78,27 @@ const AddPost = (props) => {
     };
 
 
+
     //update post functionality
     const updatePost = () => {
-
-        const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
-
-        PostService.findByTitle(postTitle)
+        PostService.update(currentPost.id, currentPost.title, currentPost.content, currentPost.category)
             .then((res) => {
+                console.log(res.data)
 
-                PostService.update(res.data[0].id, post.title, post.content, post.category)
-                    .then((res) => {
-                        //redirect the user to the post page
-                        props.history.push(`/post?title=${post.title}`);
-                        window.location.reload();
-                    })
-                    .catch((err) => console.log(err))
-
+                //redirect the user to the post page
+                props.history.push(`/post?title=${currentPost.title}`);
+                window.location.reload();
             })
-            .catch((err) => console.log(err))
-
-
+            .catch((err) => console.log(err));
     }
+
+
+
 
 
     //new post functionality
     const newPost = () => {
-        setPost(initialPostState);
+        setCurrentPost(initialPostState);
         setSubmitted(false);
     };
 
@@ -101,15 +115,25 @@ const AddPost = (props) => {
     return (
         <div>
             <NavBar />
-            <AddPostForm 
-                post={post}
-                onChange={[
-                    (e) => setPost({ ...post, [e.target.name]: e.target.value }),
-                    (e) => setPost({ ...post, category: e.target.value })
-                ]}
-                onClick={wantToUpdate ? updatePost : savePost}
-                wantToUpdate={wantToUpdate}
-            />
+            {
+                wantToUpdate 
+                ? <UpdatePostForm 
+                    currentPost={currentPost}
+                    onChange={[
+                        (e) => setCurrentPost({ ...currentPost, [e.target.name]: e.target.value }),
+                        (e) => setCurrentPost({ ...currentPost, category: e.target.value })
+                    ]}
+                    onClick={updatePost}
+                />
+                : <AddPostForm 
+                    post={post}
+                    onChange={[
+                        (e) => setPost({ ...post, [e.target.name]: e.target.value }),
+                        (e) => setPost({ ...post, category: e.target.value })
+                    ]}
+                    onClick={savePost}
+                />
+            }
         </div>
     )
 }

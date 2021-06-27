@@ -1,4 +1,6 @@
-const AddPostForm = ({ post, onChange, onClick }) => {
+import React from 'react'
+
+const UpdatePostForm = ({ currentPost, onChange, onClick }) => {
 
     return (
         <div className='add-post-container'>
@@ -9,7 +11,7 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                     type="text"
                     id="title"
                     required
-                    value={post.title}
+                    value={currentPost.title}
                     onChange={onChange[0]}
                     name="title"
                     placeholder="Enter The Title"
@@ -22,7 +24,7 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                     type="text"
                     id="content"
                     required
-                    value={post.content}
+                    value={currentPost.content}
                     onChange={onChange[0]}
                     name="content"
                     placeholder="Enter The Content"
@@ -43,12 +45,11 @@ const AddPostForm = ({ post, onChange, onClick }) => {
             </div>
 
             <div className="button-box">
-                <button onClick={onClick} className="btn-add">Add Post</button>
+                <button onClick={onClick} className="btn-update">Update Post</button>
             </div>
 
         </div>
     )
-
 }
 
-export default AddPostForm
+export default UpdatePostForm

@@ -1,3 +1,6 @@
+import { useContext } from "react"
+import { GlobalContext } from "../context/GlobalContext"
+
 import AuthService from '../services/auth.service'
 
 import BlogInitialRender from '../components/BlogInitialRender'
@@ -15,6 +18,9 @@ const Home = () => {
 
     const currentUser = AuthService.getCurrentUser()
 
+    const { is_empty } = useContext(GlobalContext)
+    const [isEmpty, setIsEmpty] = is_empty
+
 
     if (!currentUser) return <BlogInitialRender />
 
@@ -25,7 +31,7 @@ const Home = () => {
                 <div className='posts-container'>
                     <PostsList />
                 </div>
-                <div className='side-menu-container'>
+                <div style={{ display: isEmpty && 'none' }} className='side-menu-container'>
                     <Profiles />
                 </div>
 

@@ -64,6 +64,8 @@ const PostsList = () => {
                 <Categories />
             </div>
 
+            <div className='separator'></div>
+
             {
                 posts.length === 0
                     ? <PostsNotFound />
