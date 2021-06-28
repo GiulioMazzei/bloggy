@@ -1,5 +1,4 @@
 .nav-bar-container {
-
     display: flex;
     padding: 2px 25px;
     background-color: #fff;
@@ -21,6 +20,10 @@
             padding: 20px 0px;
             color: #69686e;
             margin-left: 10px;
+
+            @media screen and (max-width: 500px) {
+                display: none;
+            }
         }
     }
 
@@ -60,8 +63,16 @@
             &:hover::before {
                 width: 100%;
             }
+
+            @media screen and (max-width: 400px) {
+                font-size: 15px;
+            }
               
               
+        }
+
+        @media screen and (max-width: 500px) {
+            flex: 2.5;
         }
     }
 
