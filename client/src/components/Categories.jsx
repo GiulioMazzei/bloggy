@@ -4,6 +4,8 @@ import { GlobalContext } from "../context/GlobalContext"
 
 import PostService from "../services/post.service"
 
+
+
 const Categories = () => {
 
     const { posts_list } = useContext(GlobalContext)
@@ -20,13 +22,18 @@ const Categories = () => {
 
     }
 
+
     const isActive = (num) => {
         if (activeCategory === num) return 'active'
     }
 
+
     const handleOnClick = (num, category) => {
+
         setActiveCategory(num)
+        //find all the posts in the category
         findByCategory(category)
+
     }
 
 

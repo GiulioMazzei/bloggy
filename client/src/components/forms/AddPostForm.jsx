@@ -16,6 +16,7 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                 />
             </div>
 
+
             <div className="form-group">
                 <div className="label-box"><label htmlFor="description">Content</label></div>
                 <textarea
@@ -29,10 +30,12 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                 />
             </div>
 
+
             <div className="form-group">
                 <div className="label-box"><label htmlFor="category">Category</label></div>
                 <select onChange={onChange[1]}>
-                    <option name="All" value="All">-</option>
+                    <option value="none" selected disabled hidden>Select a Category</option>
+                    <option name="All" value="All">All</option>
                     <option name="Fashion" value="Fashion">Fashion</option>
                     <option name="Food" value="Food">Food</option>
                     <option name="House" value="House">House</option>
@@ -41,6 +44,7 @@ const AddPostForm = ({ post, onChange, onClick }) => {
                     <option name="Technology" value="Technology">Technology</option>
                 </select>
             </div>
+
 
             <div className="button-box">
                 <button onClick={onClick} className="btn-add">Add Post</button>

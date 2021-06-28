@@ -6,7 +6,7 @@ const PostSubmitSuccess = ({ onClick }) => {
                 <p>You Post has been successfully published</p>
             </div>
 
-            <button onClick={onClick}>ADD NEW</button>
+            <button onClick={onClick}>Add New</button>
 
         </div>
     )

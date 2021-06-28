@@ -1,3 +1,6 @@
+@import '_variables.scss';
+
+
 .post-page-container {
     width: 100%;
     margin-top: 100px;
@@ -7,11 +10,11 @@
 
     .link {
         text-decoration: none;
-        color: #65666F;
+        color: $title-color;
     }
 
     .title {
-        color: #65666F;
+        color: $title-color;
     }
 
     .post-info {
@@ -58,7 +61,7 @@
     }
 
     .buttons-box {
-        margin-top: 30px;
+        margin-top: 60px;
         display: flex;
         align-items: center;
 
@@ -75,17 +78,21 @@
 
         .btn-update {
             margin-right: 25px;
-            background-color: #69C7AF;
+            background-color: $light-green;
             &:hover {
-                background-color: #4eafa2;
+                background-color: $dark-green;
             }
         }
 
         .btn-delete {
-            background-color: #88b4e7;
+            background-color: $light-blue;
             &:hover {
-                background-color: #71a8e7;
+                background-color: $dark-blue;
             }
         }
+    }
+
+    .separator {
+        margin-top: 100px;
     }
 }

@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .home-container {
     display: flex;
 
@@ -19,7 +21,7 @@
 
             .title {
                 padding-bottom: 20px;
-                color: #575862;
+                color: $title-color;
             }
 
             .search-box {
@@ -49,14 +51,14 @@
                     font-size: 16px;
                     font-weight: 600;
                     color: #fff;
-                    background-color: #69C7AF;
+                    background-color: $light-green;
                     border: none;
                     border-radius: 4px;
                     cursor: pointer;
                     outline: none;
 
                     &:hover {
-                        background-color: #4eafa2;
+                        background-color: $dark-green;
                     }
 
                     @media screen and (max-width: 700px) {
@@ -201,7 +203,7 @@
 
                         .box-2 {
                             p {
-                                color: #8b8b8d;
+                                color: $text-color
                             }
                         }
 
@@ -211,7 +213,7 @@
                         margin-top: 25px;
 
                         .post-title {
-                            color: #4c4b53;
+                            color: $title-color;
                             font-size: 18px;
                         }
 
@@ -221,7 +223,7 @@
                             margin-top: 10px;
                             overflow: hidden;
                             text-overflow: ellipsis;
-                            color: #8b8b8d;
+                            color: $text-color;
                         }
                     }
 
@@ -258,13 +260,13 @@
                 p {
                     font-size: 20px;
                     font-weight: 700;
-                    color: #6C6C74;
+                    color: $title-color;
                 }
             }
 
             .no-profiles {
                 margin-top: 15px;
-                color: #6C6C74;
+                color: $text-color;
             }
 
             .profile-container {

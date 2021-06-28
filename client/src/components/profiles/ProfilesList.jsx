@@ -5,18 +5,23 @@ import { Link } from "react-router-dom"
 
 import avatar from "../../img/avatar.png"
 
+
 const ProfilesList = ({ profiles }) => {
 
     const { is_empty } = useContext(GlobalContext)
     const [isEmpty, setIsEmpty] = is_empty
 
     useEffect(() => {
+
+        //set is empty to true if there aren't other profiles
         setIsEmpty(profiles.length === 0)
+
     }, [profiles.length, setIsEmpty])
 
 
     return (
         <div className='profiles-container'>
+
             <div className='title'>
                 <p>Other Authors</p>
             </div>

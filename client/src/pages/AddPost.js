@@ -20,9 +20,10 @@ const AddPost = (props) => {
     //redirect the user to the home page if it isn't logged in
     verifyAuth(props, '/home')
 
+
     const initialPostState = {
         id: null,
-        author: JSON.parse(localStorage.getItem('user')).username,
+        author: JSON.parse(localStorage.getItem('logged-in-user')).username,
         title: '',
         content: '',
         category: '',
@@ -36,8 +37,11 @@ const AddPost = (props) => {
     
     
     useEffect(() => {
-        if (props.location.search.includes('title')) setWantToUpdate(true)
         
+        //if there is the title param in the url the user want to update the post
+        if (props.location.search.includes('title')) setWantToUpdate(true)
+
+        //get the title from the url and find the post with this title
         const postTitle = (props.location.search).slice(7).replace(/%20/g, ' ')
         findByTitle(postTitle);
         
@@ -47,12 +51,11 @@ const AddPost = (props) => {
 
     //find-by-title functionality
     const findByTitle = (title) => {
+
         PostService.findByTitle(title)
-            .then((res) => {
-                setCurrentPost(res.data[0])
-                console.log(res.data[0]);
-            })
+            .then((res) => setCurrentPost(res.data[0]))
             .catch((err) => console.log(err))
+
     }
 
 
@@ -70,10 +73,8 @@ const AddPost = (props) => {
                     category: response.data.category,
                 });
                 setSubmitted(true);
-                console.log(response.data);
             })
             .catch((err) => console.log(err))
-
 
     };
 
@@ -81,15 +82,15 @@ const AddPost = (props) => {
 
     //update post functionality
     const updatePost = () => {
+
         PostService.update(currentPost.id, currentPost.title, currentPost.content, currentPost.category)
             .then((res) => {
-                console.log(res.data)
-
                 //redirect the user to the post page
                 props.history.push(`/post?title=${currentPost.title}`);
                 window.location.reload();
             })
             .catch((err) => console.log(err));
+
     }
 
 
@@ -97,8 +98,10 @@ const AddPost = (props) => {
 
     //new post functionality
     const newPost = () => {
+
         setPost(initialPostState);
         setSubmitted(false);
+
     };
 
 
@@ -119,20 +122,24 @@ const AddPost = (props) => {
             {
                 wantToUpdate 
                 ? <UpdatePostForm 
+
                     currentPost={currentPost}
                     onChange={[
                         (e) => setCurrentPost({ ...currentPost, [e.target.name]: e.target.value }),
                         (e) => setCurrentPost({ ...currentPost, category: e.target.value })
                     ]}
                     onClick={updatePost}
+
                 />
                 : <AddPostForm 
+
                     post={post}
                     onChange={[
                         (e) => setPost({ ...post, [e.target.name]: e.target.value }),
                         (e) => setPost({ ...post, category: e.target.value })
                     ]}
                     onClick={savePost}
+
                 />
             }
         </div>

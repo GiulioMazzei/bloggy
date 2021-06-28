@@ -8,6 +8,7 @@ import RegisterForm from '../components/forms/RegisterForm'
 
 import Helper from '../helper/index'
 
+
 //style
 import '../styles/login-register-page.scss'
 
@@ -49,6 +50,7 @@ const Register = (props) => {
                 }
             );
         }
+        
     };
 
     return (

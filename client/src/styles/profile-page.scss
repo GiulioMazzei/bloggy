@@ -1,3 +1,6 @@
+@import '_variables.scss';
+
+
 .profile-page-container {
     display: flex;
     flex-direction: column;
@@ -29,7 +32,7 @@
 
             .title {
                 font-size: 40px;
-                color: #6C6C74;
+                color: $title-color;
 
                 @media screen and (max-width: 1000px) {
                     font-size: 35px;
@@ -45,9 +48,9 @@
                 border-radius: 3px;
                 cursor: pointer;
                 outline: none;
-                background-color: #88b4e7;
+                background-color: $light-blue;
                 &:hover {
-                    background-color: #71a8e7;
+                    background-color: $dark-blue;
                 }
             }
         }
@@ -61,12 +64,12 @@
 
         .link {
             text-decoration: none;
-            color: #6C6C74;
+            color: $title-color;
         }
 
         .title {
             font-size: 20px;
-            color: #606061;
+            color: $title-color;
             margin-bottom: 15px;
         }
 
@@ -81,9 +84,17 @@
                 border-top: 1px solid #ccc;
                 border-bottom: 1px solid #ccc;
             }
-            .author-post {
-                padding: 15px 0px;
-                border-bottom: 1px solid #ccc;
+            .recent-posts {
+                margin-top: 50px;
+
+                p {
+                    margin-bottom: 10px;
+                }
+
+                .author-post {
+                    padding: 15px 0px;
+                    border-bottom: 1px solid #ccc;
+                }
             }
         }
 

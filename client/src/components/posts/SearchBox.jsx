@@ -1,8 +1,11 @@
 import React from 'react'
 
 const SearchBox = ({ value, onChange, onClick }) => {
+
+
     return (
         <div className='search-box'>
+
             <input
                 type="search"
                 value={value}
@@ -11,6 +14,7 @@ const SearchBox = ({ value, onChange, onClick }) => {
             />
 
             <button onClick={onClick}>Search Posts</button>
+
         </div>
     )
 }

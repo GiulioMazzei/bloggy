@@ -7,7 +7,6 @@ export const GlobalState = ({ children }) => {
 
     const [posts, setPosts] = useState([])
     const [isEmpty, setIsEmpty] = useState(false)
-    const [previousPost, setPreviousPost] = useState({})
 
     
     return (
@@ -15,7 +14,6 @@ export const GlobalState = ({ children }) => {
             value={{
                 posts_list: [posts, setPosts],
                 is_empty: [isEmpty, setIsEmpty],
-                previous_post: [previousPost, setPreviousPost],
             }}>
             {children}
         </GlobalContext.Provider>

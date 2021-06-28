@@ -1,6 +1,8 @@
 /* eslint-disable import/no-anonymous-default-export */
 import { isEmail } from 'validator';
 
+
+
 const required = (value) => {
     if (!value) {
         return <div role='alert'>This field is required!</div>
@@ -24,5 +26,6 @@ const validPassword = (value) => {
         return <div role='alert'>The password must be between 6 and 40 characters.</div>
     }
 };
+
 
 export default { required, validUsername, validEmail, validPassword }

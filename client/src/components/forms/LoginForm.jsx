@@ -4,6 +4,8 @@ import CheckButton from 'react-validation/build/button';
 
 
 const LoginForm = ({ onSubmit, form, values, onChanges, validations, loading, message, checkBtn }) => {
+
+
     return (
         <Form onSubmit={onSubmit} ref={form} className='form' >
 

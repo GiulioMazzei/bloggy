@@ -1,5 +1,4 @@
 const db = require('../../db/index')
-
 const User = db.user
 
 

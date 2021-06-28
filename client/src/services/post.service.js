@@ -1,6 +1,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import axios from 'axios';
 
+
 const API_URL = 'http://localhost:3001/api/posts';
 
 

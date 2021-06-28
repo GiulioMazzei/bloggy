@@ -1,3 +1,6 @@
+@import '_variables.scss';
+
+
 .add-post-container {
     margin-top: 50px;
     width: 100%;
@@ -12,7 +15,7 @@
         .label-box {
             margin-bottom: 10px;
             font-size: 16px;
-            color: #65666F;
+            color: $title-color
         }
 
         input,
@@ -59,18 +62,18 @@
         }
 
         .btn-add {
-            background-color: #88b4e7;
+            background-color: $light-blue;
 
             &:hover {
-                background-color: #71a8e7;
+                background-color: $dark-blue;
             }
         }
 
         .btn-update {
-            background-color: #69C7AF;
+            background-color: $light-green;
             
             &:hover {
-                background-color: #4eafa2;
+                background-color: $dark-green;
             }
         }
 
@@ -122,10 +125,10 @@
         border-radius: 3px;
         cursor: pointer;
         outline: none;
-        background-color: #88b4e7;
+        background-color: $light-blue;
 
         &:hover {
-            background-color: #71a8e7;
+            background-color: $dark-blue;
         }
     }
 }

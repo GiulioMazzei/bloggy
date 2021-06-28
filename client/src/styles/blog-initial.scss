@@ -1,3 +1,6 @@
+@import '_variables.scss';
+
+
 .blog-initial-container {
     margin-top: 150px;
     width: 100%;
@@ -15,7 +18,7 @@
     
     h1 {
         font-size: 40px;
-        color: #65666F;
+        color: $title-color;
 
         @media screen and (max-width: 500px) {
             font-size: 30px;
@@ -41,10 +44,10 @@
 
         .login {
             margin-right: 25px;
-            background-color: #88b4e7;
+            background-color: $light-blue;
 
             &:hover {
-                background-color: #71a8e7
+                background-color: $dark-blue;
             }
 
             @media screen and (max-width: 500px) {
@@ -55,10 +58,10 @@
 
         .register {
             margin-left: 25px;
-            background-color: #69C7AF;
+            background-color: $light-green;
 
             &:hover {
-                background-color: #4eafa2;
+                background-color: $dark-green;
             }
 
             @media screen and (max-width: 500px) {

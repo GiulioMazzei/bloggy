@@ -13,6 +13,8 @@ import Helper from '../helper/index'
 import '../styles/login-register-page.scss'
 
 
+
+
 const Login = (props) => {
 
     const form = useRef();
@@ -37,7 +39,7 @@ const Login = (props) => {
         form.current.validateAll();
     
         if (checkBtn.current.context._errors.length === 0) {
-            //if there aren't validation errors log in the user
+            //if there aren't validation errors log-in the user
             AuthService.login(username, email, password).then(
                 () => {
                     //redirect the user to the home page
@@ -55,6 +57,7 @@ const Login = (props) => {
         }
 
     };
+
 
 
     return (

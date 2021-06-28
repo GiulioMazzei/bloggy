@@ -17,7 +17,9 @@ const PostInfo = ({ post, isAuthor, onClick }) => {
                         <p>{post.author}</p>
                     </div>
                 </Link>
+
                 <p className='category'>{post.category}</p>
+
             </div>
 
             <div className="content">
@@ -27,12 +29,17 @@ const PostInfo = ({ post, isAuthor, onClick }) => {
 
             {isAuthor && (
                 <div className="buttons-box">
+
                     <Link className='link' to={`/add/update?title=${post.title}`}>
                         <button className='btn-update'>Update Post</button>
                     </Link>
+
                     <button className='btn-delete' onClick={onClick} >Delete Post</button>
+
                 </div>
             )}
+
+            <div className='separator'></div>
 
         </div>
     )

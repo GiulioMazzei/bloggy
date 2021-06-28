@@ -1,4 +1,4 @@
-//define the model of the post with his parameters (title, content)
+//define the model of the post with its parameters (author, title, content, category)
 
 module.exports = (sequelize, Sequelize) => {
     

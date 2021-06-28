@@ -11,8 +11,10 @@ const Profiles = () => {
 
 
     useEffect(() => {
+
         //when the page load retrieve all the posts
         retrieveProfiles()
+
     }, [])
 
 
@@ -21,6 +23,7 @@ const Profiles = () => {
     const retrieveProfiles = () => {
 
         const currentUser = AuthService.getCurrentUser().username
+
         AuthService.getAllProfiles()
             .then((res) => {
                 //remove the current user from the 'other authors' list

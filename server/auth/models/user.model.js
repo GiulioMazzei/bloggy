@@ -1,4 +1,4 @@
-//define the model of the user with his parameters (username, email, password)
+//define the model of the user with its parameters (username, email, password)
 
 module.exports = (sequelize, Sequelize) => {
     

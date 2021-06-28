@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .nav-bar-container {
     display: flex;
     padding: 2px 25px;
@@ -18,7 +20,7 @@
         p {
             font-size: 18px;
             padding: 20px 0px;
-            color: #69686e;
+            color: $title-color;
             margin-left: 10px;
 
             @media screen and (max-width: 500px) {
@@ -35,7 +37,7 @@
 
         .link {
             font-size: 16px;
-            color: #7A7981;
+            color: $title-color;
             opacity: 0.75;
             text-decoration: none;
             padding: 20px 0px;
@@ -44,7 +46,7 @@
 
             &:hover {
                 opacity: 1;
-                color: #6697D2;
+                color: $dark-blue;
             }
 
             &::before {
@@ -52,7 +54,7 @@
                 height: 2px;
                 content: "";
                 position: absolute;
-                background-color: #6697D2;
+                background-color: $dark-blue;
             }
 
             &::before {

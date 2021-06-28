@@ -17,18 +17,14 @@ const ProfileInfo = ({ author, isAuthor, posts, onClick }) => {
 
                 <div className="title-and-button">
                     <h1 className='title'>{author}</h1>
-                    {isAuthor && <button onClick={onClick}><Link className='link' to='/home'>Logout</Link></button >}
+                    {isAuthor && <Link className='link' to='/home'><button onClick={onClick}>Logout</button ></Link>}
                 </div>
             </div>
 
             <div className="published-posts">
-                <p className='title'>User's Posts</p>
+                <p className='title'>Authors' Posts</p>
                 <p className='description'>This author has published {posts.length} posts</p>
                 <AuthorPostsList posts={posts} />
-            </div>
-
-            <div className="button-box">
-
             </div>
 
         </div >

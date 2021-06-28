@@ -21,26 +21,29 @@ const PostsList = () => {
 
 
     useEffect(() => {
+
         //when the page load retrieve all the posts
         retrievePosts()
+
     }, [])
 
 
     //retrieve all the posts
     const retrievePosts = () => {
+
         PostService.getAll()
-            .then((res) => {
-                setPosts(res.data)
-                console.log(res.data);
-            })
+            .then((res) => setPosts(res.data))
             .catch((err) => console.log(err))
+
     }
 
     //retrieve all the posts with a specific title
     const findByTitle = () => {
+
         PostService.findByTitle(searchTitle)
             .then((res) => setPosts(res.data))
             .catch((err) => console.log(err))
+
     }
 
 
@@ -60,8 +63,10 @@ const PostsList = () => {
             <div className='separator'></div>
 
             <div className="posts-controllers">
+
                 <PostsDetails posts={posts} />
                 <Categories />
+
             </div>
 
             <div className='separator'></div>

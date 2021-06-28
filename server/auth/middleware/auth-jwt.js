@@ -2,8 +2,7 @@ const jwt = require('jsonwebtoken')
 
 const authConfig = require('../config/auth.config')
 
-const db = require('../../db/index')
-const User = db.user
+
 
 
 //create the verifyToken middleware
@@ -17,8 +16,10 @@ verifyToken = (req, res, next) => {
 
     //use jwt to verify that the token belongs to a specific user
     jwt.verify(token, authConfig.secret, (err, decoded) => {
+        
         if (err) return res.status(401).send({ message: 'Unauthorized' });
         req.userId = decoded.id;
+
         next(); //go the the next middleware
     });
 

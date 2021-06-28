@@ -21,18 +21,22 @@ const Post = ({ post }) => {
             <div className='content-box'>
 
                 <div className="author-box">
+
                     <Link className='link' to={`/profile?author=${post.author}`}>
                         <div className='box-1'>
                             <img src={avatar} alt="author" />
                             <p>{post.author}</p>
                         </div>
                     </Link>
+
                     <div className='box-2'>
                         <p>Published {publishedData}</p>
                     </div>
+
                 </div>
 
                 <div className="title-description-box">
+
                     <Link className='link' to={`/post?title=${post.title}`}>
                         <p className='post-title'>{post.title}</p>
 
@@ -40,6 +44,7 @@ const Post = ({ post }) => {
                             <p>{post.content}</p>
                         </div>
                     </Link>
+
                 </div>
 
             </div>

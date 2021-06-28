@@ -1,3 +1,5 @@
+@import '_variables.scss';
+
 .register-container, 
 .login-container {
     margin-top: 100px;
@@ -8,7 +10,7 @@
 
     .title {
         margin-bottom: 50px;
-        color: #65666F;
+        color: $title-color;
     }
 
     .form {
@@ -29,14 +31,14 @@
         }
 
         .message-container-register {
-            color: #69C7AF;
-            border: 1px solid #69C7AF;
+            color: $light-green;
+            border: 1px solid $light-green;
             background-color: #f2fbf9;
         }
 
         .message-container-login {
-            color: #88b4e7;
-            border: 1px solid #88b4e7;
+            color: $light-blue;
+            border: 1px solid $light-blue;
             background-color: #f2f7fb;
         }
 
@@ -46,7 +48,7 @@
             width: 100%;
 
             .label-box {
-                color: #65666F;
+                color: $title-color;
                 margin: 15px 0px;
             }
 
@@ -83,16 +85,16 @@
         }
 
         .button-box-register button {
-            background-color: #69C7AF;
+            background-color: $light-green;
             &:hover {
-                background-color: #4eafa2;
+                background-color: $dark-green;
             }
         }
 
         .button-box-login button {
-            background-color: #88b4e7;
+            background-color: $light-blue;
             &:hover {
-                background-color: #71a8e7;
+                background-color: $dark-blue;
             }
         }
 
@@ -105,15 +107,15 @@
         margin-top: 30px;
 
         .link-register {
-            color: #69C7AF;
+            color: $light-green;
             &:hover {
-                color: #4eafa2;
+                color: $dark-green;
             }
         
         .link-login {
-            color: #88b4e7;
+            color: $light-blue;
             &:hover {
-                color: #71a8e7;
+                color: $dark-blue;
             }
         }
     }
