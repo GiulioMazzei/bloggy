@@ -5,12 +5,15 @@ module.exports = (sequelize, Sequelize) => {
     const Post = sequelize.define('posts', {
       author: {
         type: Sequelize.STRING,
+        allowNull: false
       },
       title: {
         type: Sequelize.STRING,
+        allowNull: false
       },
       content: {
         type: Sequelize.TEXT('long'),
+        allowNull: false
       },
       category: {
         type: Sequelize.STRING,
