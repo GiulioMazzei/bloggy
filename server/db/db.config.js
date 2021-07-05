@@ -3,6 +3,7 @@ require('dotenv').config();
 
 //config for the DB
 module.exports = {
+
     HOST: process.env.DB_HOST,
     USER: process.env.DB_USER,
     PASSWORD: process.env.DB_PASSWORD,
@@ -14,5 +15,6 @@ module.exports = {
       acquire: 30000,
       idle: 10000,
     },
+    
 };
   
