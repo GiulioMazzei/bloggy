@@ -6,12 +6,14 @@ import Routes from './Routes';
 import { GlobalState } from './context/GlobalContext'
 
 ReactDOM.render(
+
   <React.StrictMode>
     <GlobalState>
       <Routes />
     </GlobalState>
   </React.StrictMode>,
   document.getElementById('root')
+  
 );
 
 // If you want to start measuring performance in your app, pass a function
