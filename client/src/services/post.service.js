@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 
-const API_URL = 'http://localhost:3001/api/posts';
+const API_URL = 'https://bloggy-webapp.herokuapp.com/api/posts';
 
 
 //get all the posts

@@ -2,7 +2,7 @@
 import axios from 'axios'
 
 
-const API_URL = 'http://localhost:3001/api/auth';
+const API_URL = 'https://bloggy-webapp.herokuapp.com/api/auth';
 
 
 //register service
