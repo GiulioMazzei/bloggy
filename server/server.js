@@ -12,7 +12,7 @@ const app = express()
 //middleware
 
 //cors
-app.use(cors({ origin: 'https://bloggy-webapp.netlify.app' })); //omit CORS origin
+app.use(cors());
 
 //parse requests of content-type: application/json
 app.use(bodyParser.json());
