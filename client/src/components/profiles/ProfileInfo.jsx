@@ -23,8 +23,12 @@ const ProfileInfo = ({ author, isAuthor, posts, onClick }) => {
 
             <div className="published-posts">
                 <p className='title'>Authors' Posts</p>
-                <p className='description'>This author has published {posts.length} posts</p>
-                <AuthorPostsList posts={posts} />
+                {posts ? (
+                    <div>
+                        <p className='description'>This author has published {posts.length} posts</p>
+                        <AuthorPostsList posts={posts} />
+                    </div>
+                ) : <p className='description'>Loading Posts...</p>}
             </div>
 
         </div >
